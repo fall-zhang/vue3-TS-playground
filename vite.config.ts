@@ -5,7 +5,7 @@ import { resolve as pathResolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
+import tailwindcss from 'tailwindcss'
 // https://vitejs.dev/config/
 export default defineConfig({
   // host:true, // 表示可以通过 ip 进行访问
@@ -17,10 +17,15 @@ export default defineConfig({
       '@P': pathResolve(__dirname, 'src/pages')
     }
   },
+  css: {
+    postcss: {
+      plugins: [tailwindcss()]
+    }
+  },
   server: {
     proxy: {
       '^/api/.*': {
-        target: 'https://www.baidu.com/',
+        target: 'https://yourserver.com/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
