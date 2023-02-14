@@ -22,6 +22,7 @@ module.exports = {
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     'no-undef': 0, // 未命名变量不报错：当未命名变量的检查交给 ts 类型检查器时使用
+    'func-call-spacing': 0, //
     // 'no-unused-vars': 0, // 未命名变量检查交给 ts
     'space-before-function-paren': 0, // function 前面的空格
     'vue/first-attribute-linebreak': 0,

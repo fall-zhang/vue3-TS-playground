@@ -18,11 +18,6 @@ watch(route, (newVal) => {
 <template>
   <PageLayout :title="title" no-side>
     <router-view></router-view>
-    <h1>
-      Hello world!
-    </h1>
-    <h2>这是只是暂时</h2>
-    <h3>这是只是暂时</h3>
   </PageLayout>
 </template>
 
