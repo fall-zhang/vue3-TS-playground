@@ -1,22 +1,20 @@
 <script setup lang="ts">
-import CollectionItem from '@/components/_collection/CollectionItem.vue'
-import { computed } from 'vue'
-import type { ComponentInternalInstance } from 'vue'
+import CollectionItem from './CollectionItem.vue'
+import { ComponentOptions, computed } from 'vue'
 
 const globPath = import.meta.glob('@C/**/*.vue')
+// console.log(globPath)
 // 除去所有带有 _ 的路径
 const resolvePath = Object.keys(globPath).filter(path => !/\/_/.test(path))
 const allComponents = resolvePath.map(item => globPath[item])
 
-const buil = ref<Array<{ default: ComponentInternalInstance & { __name: string } }>>([])
-onMounted(() => {
+const buil = ref<Array<{ default: ComponentOptions & { __name: string } }>>([])
+onMounted(async () => {
   const requestList = allComponents.map(item => item())
-  Promise.all(requestList).then(res => {
-    buil.value = res as Array<{ default: ComponentInternalInstance & { __name: string } }>
-  })
+  buil.value = await Promise.all(requestList) as Array<{ default: ComponentOptions & { __name: string } }>
 })
 const gridRowCount = computed(() => {
-  return Math.ceil(9 / 4)
+  return Math.ceil(buil.value.length / 4)
 })
 </script>
 
@@ -24,7 +22,7 @@ const gridRowCount = computed(() => {
   <div class="collection">
     <CollectionItem v-for="(part, index) in buil" :title="part.default.__name" :key="index"
       :arguments="part.default.props">
-      <Component :is="part.default" :count="99"></Component>
+      <component :is="part.default"></component>
     </CollectionItem>
   </div>
 </template>
@@ -34,7 +32,7 @@ const gridRowCount = computed(() => {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   min-height: 40vh;
-  grid-template-rows: repeat(v-bind(gridRowCount), 1fr);
+  grid-template-rows: repeat(v-bind(gridRowCount), 400px);
 }
 </style>
 

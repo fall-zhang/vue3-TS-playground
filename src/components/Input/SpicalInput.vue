@@ -1,18 +1,17 @@
 <template>
   <div>
-    果断就会摆个
     {{ title }}
-    猜大小：{{ props.count }} 很 {{ exporse }}
+    猜大小：{{ pCount }} 很 {{ exporse }}
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   title?: string
-  count: number
 }>()
+const pCount = ref(22)
 const exporse = ref('小')
-if (props.count > 10) {
+if (pCount.value > 10) {
   exporse.value = '大'
 }
 defineExpose({
