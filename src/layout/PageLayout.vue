@@ -50,7 +50,7 @@ defineProps<{
   .title {
     font-weight: 550;
     font-size: 32px;
-    text-shadow: 1px 1px 12px #ddd;
+    text-shadow: 1px 1px 12px #c2c2c26e;
   }
 }
 

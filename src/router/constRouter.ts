@@ -1,30 +1,12 @@
 import type { RouteRecordRaw } from 'vue-router'
-import { BlankLayout } from '../layout'
 // import { BlankLayout } from '../layout'
-import { defineAsyncComponent as asyncImport } from 'vue'
 import { isDevelopment } from '@/config'
 import ErrorPage404 from '@/pages/404.vue'
+// import RedirectRouter from '@/pages/ConstantPage/RedirectRouter.vue'
 const constRouters: RouteRecordRaw[] = [
   {
-    path: '/redirect',
-    component: BlankLayout,
-    children: [
-      {
-        path: '/redirect/:path*',
-        component: () => import('@P/LayoutPage1/index.vue'),
-        meta: {}
-      }
-    ]
-  }, {
     path: '/home',
-    component: () => import('@P/home.vue'),
-    // children: [
-    //   {
-    //     path: '/redirect/:path*',
-    //     component: BlankLayout,
-    //     meta: {}
-    //   }
-    // ]
+    component: () => import('@P/home.vue')
   }, {
     path: '/components',
     component: isDevelopment ? () => import('@C/_collection/index.vue') : ErrorPage404,
@@ -38,15 +20,12 @@ const constRouters: RouteRecordRaw[] = [
     ]
   }, {
     path: '/',
-    redirect: '/home',
-    children: [
-      {
-        path: '/redirect/:path*',
-        component: () => import('@P/LayoutPage1/index.vue'),
-        meta: {}
-      }
-    ]
+    redirect: '/home'
   },
+  {
+    path: '/:id',
+    component: ErrorPage404
+  }
 
 ]
 export default constRouters

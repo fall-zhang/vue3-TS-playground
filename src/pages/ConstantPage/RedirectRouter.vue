@@ -1,5 +1,9 @@
 <template>
   <div>
+    <h3>当前路由为{{ $route.params }}</h3>
+    <RouterLink to="/">
+回到首页
+</RouterLink>
   </div>
 </template>
 
@@ -29,4 +33,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 </style>

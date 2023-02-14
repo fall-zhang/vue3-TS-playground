@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  display: flex;
+  color: #2c3e50;
+  list-style: none;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* :-webkit-any(article, aside, nav, section) h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+} */
+
+html,
+body {
+  margin: 0;
+
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* 控制全局滚动栏样式 */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+  background-color: #d4d4d4;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #656565;
+  width: 10px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}

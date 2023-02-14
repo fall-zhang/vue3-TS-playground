@@ -3,9 +3,9 @@
 </script>
 <template>
   <div>
-
+    萨达萨达
   </div>
 </template>
-<style scoped lang="less">
+<style scoped lang="scss">
 
 </style>
