@@ -7,9 +7,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    _Cell: typeof import('./../components/Table/_Cell.vue')['default']
     _collection: typeof import('./../components/_collection/index.vue')['default']
     AxisLabel: typeof import('./../components/HexagonFighter/AxisLabel.vue')['default']
     CollectionItem: typeof import('./../components/_collection/CollectionItem.vue')['default']
+    EditableTable: typeof import('./../components/Table/EditableTable.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
@@ -27,6 +29,8 @@ declare module '@vue/runtime-core' {
     ElResult: typeof import('element-plus/es')['ElResult']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     HexagonFighter: typeof import('./../components/HexagonFighter/HexagonFighter.vue')['default']
     InfinityScroll: typeof import('./../components/animation/InfinityScroll.vue')['default']
     Markdown: typeof import('./../components/Markdown/Markdown.vue')['default']

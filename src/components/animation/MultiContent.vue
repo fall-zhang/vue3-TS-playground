@@ -10,7 +10,7 @@
       随机移动节点
     </el-button>
     <TransitionGroup name="list" tag="ul" class="container">
-      <li class="item" v-for="(item,index) in list" :key="item">
+      <li class="item" v-for="(item, index) in list" :key="item">
         <div>
           {{ '飞翔'+item }}
           <button @click="onDelete(index)">
@@ -32,7 +32,7 @@ function onDelete(index: number) {
 }
 function onRandomAdd() {
   const random = Math.floor(Math.random() * (list.value.length + 1))
-  // const arr = 
+  // const arr =
   list.value = [...list.value.slice(0, random), current.value, ...list.value.slice(random)]
   // list.value = [].concat(current.value)
   current.value++
@@ -44,11 +44,6 @@ function onRandomRemove() {
 }
 function onShuffle() {
   list.value = shuffle(list.value)
-}
-</script>
-<script lang="ts">
-export default {
-  name: 'MultiContent'
 }
 </script>
 <style scoped lang="scss">

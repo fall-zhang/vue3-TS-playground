@@ -9,12 +9,9 @@ const textValue = ref('# 这里是标题')
 const mdxValue = computed(() => marked(textValue.value))
 </script>
 
-<style scoped lang="scss">
-
-</style>
-
-<script lang="ts">
+<style scoped lang="scss"></style>
+<script>
 export default {
-  name: 'HomePage'
+  name: 'MdxMarkdown'
 }
 </script>
