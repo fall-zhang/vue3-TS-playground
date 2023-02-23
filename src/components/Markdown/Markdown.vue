@@ -12,6 +12,6 @@ const mdxValue = computed(() => marked(textValue.value))
 <style scoped lang="scss"></style>
 <script>
 export default {
-  name: 'MdxMarkdown'
+  name: 'MarkedMarkdown'
 }
 </script>

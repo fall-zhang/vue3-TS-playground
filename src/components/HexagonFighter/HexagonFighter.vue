@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex;justify-content: space-between;">
     <el-form label-width="40px" size="small">
-      <el-form-item :label="item.label" v-for="(item,index) in stats" :key="index">
+      <el-form-item :label="item.label" v-for="(item, index) in stats" :key="index">
         <el-input type="number" v-model="item.value" style="width:80px" :min="0" :max="100"></el-input>
       </el-form-item>
     </el-form>
