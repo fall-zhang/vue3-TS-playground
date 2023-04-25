@@ -4,7 +4,7 @@
   </h1>
   <h2>
     您可以先跳转到
-    <router-link to="/components" class="t-pink">
+    <router-link to="/components" class="t-pink normal">
       Components页面
     </router-link>
   </h2>
@@ -16,6 +16,19 @@
 <style scoped lang="scss">
 h1 {
   font-size: 2rem;
+}
+
+.normal {
+  text-underline-offset: 1px;
+  text-decoration-line: underline;
+  text-decoration-color: #000;
+  transition: all .3s;
+
+  &:hover {
+    text-decoration-color: blue;
+    text-underline-offset: 10px;
+    color: blue;
+  }
 }
 </style>
 <script lang="ts">

@@ -5,7 +5,7 @@ import { PageLayout } from './layout'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 const title = ref('模板系统')
-console.log(route.meta.pageTitle === 'string')
+// console.log(route.meta.pageTitle === 'string')
 watch(route, (newVal) => {
   if (route.meta.pageTitle && typeof newVal.meta.pageTitle === 'string') {
     title.value = newVal.meta.pageTitle
@@ -21,6 +21,4 @@ watch(route, (newVal) => {
   </PageLayout>
 </template>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

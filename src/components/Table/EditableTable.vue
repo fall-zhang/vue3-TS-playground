@@ -15,8 +15,8 @@ const cols = cells.map((_, i) => String.fromCharCode(65 + i))
       <tr>
         <th></th>
         <th v-for="(c, index) in cols" :key="index">
-{{ c }}
-</th>
+          {{ c }}
+        </th>
       </tr>
     </thead>
     <tbody>
