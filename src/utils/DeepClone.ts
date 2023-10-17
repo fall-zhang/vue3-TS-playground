@@ -1,10 +1,10 @@
-export function deepClone(content: any): any {
-  if (typeof content !== 'object') {
-    return content
+export function deepClone(receive: any): any {
+  if (typeof receive !== 'object' || receive === null) {
+    return receive
   }
-  const result: any = Array.isArray(content) ? [] : {}
-  if (Array.isArray(content)) {
-    content.forEach(item => {
+  const result: any = Array.isArray(receive) ? [] : {}
+  if (Array.isArray(receive)) {
+    receive.forEach(item => {
       if (typeof item === 'object' && item !== null) {
         const afterDeep = deepClone(item)
         result.push(afterDeep)
@@ -13,12 +13,11 @@ export function deepClone(content: any): any {
       }
     })
   } else {
-    Object.keys(content).forEach(item => {
-      if (typeof result[item] !== 'object') {
-        result[item] = content[item]
+    Object.keys(receive).forEach(item => {
+      if (typeof receive[item] !== 'object') {
+        result[item] = receive[item]
       } else {
-        const afterDeep = deepClone(item)
-        result[item] = afterDeep
+        result[item] = deepClone(receive[item])
       }
     })
   }
