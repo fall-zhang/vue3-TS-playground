@@ -9,15 +9,24 @@ const asyncRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: '/redirect/:path*',
-        component: () => import('@P/LayoutPage1/index.vue'),
-        meta: { pageTitle: '模块查看系统' }
+        component: () => import('@P/EditTable/index.vue'),
+        meta: { pageTitle: '系统' }
       }
     ]
+  },
+  {
+    path: '/edit-table',
+    name: 'linktop23',
+    component: () => import('@P/EditTable/EditTable.vue'),
+    meta: { pageTitle: '模块系统' },
+  },
+  {
+    path: '/edit-table2',
+    name: 'linktop223',
+    component: () => import('@P/EditTable2/EditTableSelect.vue'),
+    meta: { pageTitle: '模块系统' },
   }
   // {
-  //   path: '/linktop2',
-  //   name: 'linktop2',
-  //   component: BlankRouter,
   //   meta: { menuName: "领效2.0" },
   //   children: [
   //     {

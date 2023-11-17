@@ -13,7 +13,7 @@ module.exports = {
   //   reactive: true
   // },
   // 后面的配置会覆盖前者
-  extends: ['standard', 'plugin:vue/vue3-strongly-recommended'],
+  extends: ['eslint:recommended', 'plugin:vue/vue3-recommended'],
   parserOptions: {
     ecmaVersion: 'latest',
     parser: '@typescript-eslint/parser',
@@ -22,10 +22,31 @@ module.exports = {
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     'no-undef': 0, // 未命名变量不报错：当未命名变量的检查交给 ts 类型检查器时使用
-    'func-call-spacing': 0, //
-    // 'no-unused-vars': 0, // 未命名变量检查交给 ts
-    'vue/multiline-html-element-content-newline': 0, // function 前面的空格
+    'no-unused-vars': 1, // 未使用的变量
+    'comma-dangle': 0,
     'space-before-function-paren': 0, // function 前面的空格
+    quotes: [
+      2,
+      'single',
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: true
+      }
+    ],
+    semi: [2, 'never'],
+    'no-irregular-whitespace': 2,
+    'eol-last': 0, // 所有文件结尾必须包括换行
+    // 异步处理
+    'no-promise-executor-return': 2, // 禁止 promise 中使用 return
+    'no-await-in-loop': 2, // 禁止循环中使用 await
+    'max-nested-callbacks': ['error', 3], // 异步最大回调数
+    'no-return-await': 2,
+    'prefer-promise-reject-errors': 2, // 使用 new Error 追踪错误
+    // vue 错误
+    'vue/no-unused-vars': 1,
+    'vue/component-tags-order': 0,
+    'vue/singleline-html-element-content-newline': 0,
+    'vue/multiline-html-element-content-newline': 0,
     'vue/first-attribute-linebreak': 0,
     'vue/html-closing-bracket-newline': 0,
     'vue/html-indent': 0,
@@ -38,18 +59,7 @@ module.exports = {
         multiline: 4
       }
     ],
-    quotes: [
-      2,
-      'single',
-      {
-        avoidEscape: true,
-        allowTemplateLiterals: true
-      }
-    ],
-    semi: [2, 'never'],
-    // eol-last
-    'no-irregular-whitespace': 2,
-    'eol-last': 0,
+    // ts 错误处理
     '@typescript-eslint/no-explicit-any': 1
   }
 }

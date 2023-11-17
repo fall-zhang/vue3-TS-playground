@@ -8,7 +8,7 @@
       </slot>
     </el-header>
     <el-container class="container">
-      <el-aside class="aside" v-if="!noSide">
+      <el-aside v-if="!noSide" class="aside">
         <slot name="aside">
           <SideMenu></SideMenu>
         </slot>
@@ -59,9 +59,9 @@ defineProps<{
     background-color: #bbb;
   }
 
-  .main {
-    background-color: rgb(235, 235, 235);
-  }
+  // .main {
+  //   background-color: rgb(235, 235, 235);
+  // }
 }
 
 .footer {

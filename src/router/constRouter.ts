@@ -14,7 +14,7 @@ const constRouters: RouteRecordRaw[] = [
     children: [
       {
         path: '/redirect/:path*',
-        component: () => import('@P/LayoutPage1/index.vue'),
+        component: () => import('@P/EditTable/EditTable.vue'),
         meta: { pageTitle: '模块查看系统' }
       }
     ]

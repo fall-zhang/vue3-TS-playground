@@ -8,6 +8,9 @@
       Components页面
     </router-link>
   </h2>
+  <router-link to="/edit-table" class="t-pink normal">
+    表格编辑
+  </router-link>
 </template>
 
 <script lang="ts" setup>
@@ -21,7 +24,9 @@ h1 {
 .normal {
   text-underline-offset: 1px;
   text-decoration-line: underline;
-  text-decoration-color: #000;
+  text-underline-offset: 4px;
+  text-decoration-color: blue;
+  // text-decoration-color: #000;
   transition: all .3s;
 
   &:hover {
